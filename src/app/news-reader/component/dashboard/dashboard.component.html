@@ -1,0 +1,21 @@
+<div class="container">
+    <h4 class="text-center">News Listing</h4>
+    <div class="m-3 d-flex">
+        <label class="me-3" for="searchQuery">Search News:</label>
+        <input type="text" id="searchQuery" class="form-control" [(ngModel)]="searchQuery">
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let newsItem of newsData | news: searchQuery">
+            <div class="card">
+                <img class="card-img-top" [routerLink]="['/news', newsItem.id]" [src]="newsItem.urlToImage"
+                    alt="News Image">
+                <div class="card-body">
+                    <h6 class="card-title" [routerLink]="['/news', newsItem.id]">Title:<small class="text-muted">
+                            {{newsItem.title }}</small></h6>
+                    <p class="card-text">Description:<small class="text-muted"> {{ newsItem.description }}</small></p>
+                    <p class="card-text">Author:<small class="text-muted"> {{ newsItem.author }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card">
+        <img class="card-img-top" width="500px" [src]="newsItem?.urlToImage" alt="News Image">
+        <div class="card-body">
+            <h5 class="card-title">Title: {{ newsItem?.title }}</h5>
+            <p class="card-text">Description: {{ newsItem?.description }}</p>
+            <p class="card-text">Author: {{ newsItem?.author }}</p>
+            <p class="card-text">PublishedAt: {{ newsItem?.publishedAt }}</p>
+            <p class="card-text">Content: {{ newsItem?.content }}</p>
+        </div>
+    </div>
+</div>
